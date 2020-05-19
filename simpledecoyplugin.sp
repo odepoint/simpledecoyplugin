@@ -8,7 +8,7 @@ public Plugin myinfo = {
   description = "Gives infinite decoys",
   version = "1.0",
   url = "http://steamcommunity.com/id/diddley4209"
-};
+}
 
 public void OnEntityCreated(int entity, const char[] classname)
 {
