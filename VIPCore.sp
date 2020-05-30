@@ -180,6 +180,11 @@ public void OnClientDisconnect(int client)
 public Action Event_RoundStart(Event event, char[] name, bool dontBroadcast)
 {
 	g_iRoundsPassed++;
+	int iClient = GetClientOfUserId(event.GetInt("userid"));
+	if (g_bVIP[iClient] && IsPlayerAlive(iClient))
+	{
+           GivePlayerItem(client, "weapon_taser");
+        }
 }
 
 public Action Event_PlayerSpawn(Event event, char[] name, bool dontBroadcast)
