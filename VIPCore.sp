@@ -181,9 +181,13 @@ public Action Event_RoundStart(Event event, char[] name, bool dontBroadcast)
 {
 	g_iRoundsPassed++;
 	int iClient = GetClientOfUserId(event.GetInt("userid"));
-	if (g_bVIP[iClient] && IsPlayerAlive(iClient))
+	if(iClient && g_bVIP[iClient] && IsPlayerAlive(iClient))
 	{
-           GivePlayerItem(client, "weapon_taser");
+           GivePlayerItem(iClient, "weapon_taser");
+           GivePlayerItem(iClient, "weapon_flashbang");
+           GivePlayerItem(iClient, "weapon_molotov");
+           GivePlayerItem(iClient, "weapon_hegrenade");
+           GivePlayerItem(iClient, "weapon_smokegrenade"); 
         }
 }
 
